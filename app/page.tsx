@@ -60,6 +60,22 @@ export default function Home() {
 
   return (
     <div className="p-8 max-w-lg mx-auto space-y-4">
+      <div className="login-button">
+        <a
+          href="/login"
+          className="bg-green-600 text-white px-4 py-2 rounded"
+        >
+          Login
+        </a>
+      </div>
+      <div className="register-button">
+        <a
+          href="/register"
+          className="bg-green-600 text-white px-4 py-2 rounded"
+        >
+          Register
+        </a>
+      </div>
       <h1 className="text-2xl font-bold">🌿 Recuento del Huerto</h1>
 
       <div className="flex gap-2">
