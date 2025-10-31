@@ -41,3 +41,27 @@ export async function POST(req) {
   await compra.save();
   return NextResponse.json(compra);
 }
+export async function DELETE(req) {
+  await connect();
+  const user = getUserFromToken(req);
+  if (!user) return NextResponse.json({ error: "No autenticado" }, { status: 401 });
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get("id");
+  if (!id) return NextResponse.json({ error: "ID no proporcionado" }, { status: 400 });
+  await Compra.deleteOne({ _id: id, userId: user.id });
+  return NextResponse.json({ message: "Compra eliminada" });
+}
+export async function PUT(req) {
+  await connect();
+  const user = getUserFromToken(req);
+  if (!user) return NextResponse.json({ error: "No autenticado" }, { status: 401 });
+  const data = await req.json();
+  const { id, ...updateData } = data;
+  if (!id) return NextResponse.json({ error: "ID no proporcionado" }, { status: 400 });
+  const compra = await Compra.findOneAndUpdate(
+    { _id: id, userId: user.id },
+    updateData,
+    { new: true }
+  );
+  return NextResponse.json(compra);
+}
