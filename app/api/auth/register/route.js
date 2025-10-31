@@ -11,7 +11,7 @@ async function connect() {
   if (mongoose.connection.readyState === 0) {
     await mongoose.connect(uri);
   }
-}
+} 
 
 export async function POST(req) {
   await connect();
