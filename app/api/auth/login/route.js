@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "@/models/User";
 
-const uri = process.env.MONGODB_URI;
+const uri = process.env.MONGO_URI;
 const JWT_SECRET = process.env.JWT_SECRET || "supersecreto";
 
 async function connect() {
