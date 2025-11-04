@@ -128,7 +128,7 @@ export default function Home() {
         </button>
       </div>
 
-      <h1 className="text-2xl font-bold">🌿 Recuento de gastos del huerto!!</h1>
+      <h1 className="text-2xl font-bold">🌿 Recuento de gastos del huerto!</h1>
 
       {/* Formulario de nueva compra */}
       <div className="flex gap-2">
