@@ -22,9 +22,11 @@ jobs:
         run: |
           echo "🚀 Deploying latest Docker image to Render..."
 
-          curl -s -X POST "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys" \
+          curl -X POST "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys" \
+            -H "Accept: application/json" \
             -H "Authorization: Bearer $RENDER_API_KEY" \
             -H "Content-Type: application/json" \
-            --data '{"clearCache":true}'
+            -d '{"clearCache":false}'
 
           echo "✅ Deployment triggered successfully on Render"
+
