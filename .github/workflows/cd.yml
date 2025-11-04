@@ -26,7 +26,8 @@ jobs:
             -H "Accept: application/json" \
             -H "Authorization: Bearer $RENDER_API_KEY" \
             -H "Content-Type: application/json" \
-            -d '{"clearCache":false}'
+            --data-raw '{"clearCache": false}'
 
           echo "✅ Deployment triggered successfully on Render"
+
 
