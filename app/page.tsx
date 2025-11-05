@@ -126,6 +126,9 @@ export default function Home() {
         >
           Logout
         </button>
+        <a href="/perfil" className="bg-blue-600 text-white px-3 py-1 rounded">
+          Perfil
+        </a>
       </div>
 
       <h1 className="text-2xl font-bold">🌿 Recuento de gastos del huerto</h1>
