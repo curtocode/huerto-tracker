@@ -54,7 +54,7 @@ export default function BotonDescargarPDF() {
         cargando ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
       }`}
     >
-      {cargando ? "Generando..." : "Descargar historial de compras"}
+      {cargando ? "Generando..." : "PDF "}
     </button>
   );
 }

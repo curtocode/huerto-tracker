@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import BotonDescargarPDF from "./components/BotonDescargarPDF";
 
 interface Compra {
   _id: string;
@@ -126,9 +127,7 @@ export default function Home() {
         >
           Logout
         </button>
-        <a href="/perfil" className="bg-blue-600 text-white px-3 py-1 rounded">
-          Perfil
-        </a>
+        <BotonDescargarPDF />
       </div>
 
       <h1 className="text-2xl font-bold">🌿 Recuento de gastos del huerto</h1>
